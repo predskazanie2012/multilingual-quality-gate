@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; connect-src 'none'; base-uri 'none'; form-action 'none'; object-src 'none'">
+    <meta name="description" content="An offline, hand-authored showcase of a multilingual review workflow with deterministic mock reviewers.">
+    <title>Multilingual Quality Gate · Local showcase</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script type="module" src="./app.mjs"></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#workspace">Skip to the example</a>
+    <header class="site-header">
+      <div class="header-inner">
+        <a class="brand" href="#top" aria-label="Multilingual Quality Gate home"><span class="brand-mark" aria-hidden="true"><span></span><span></span><span></span></span><span>Multilingual<br><strong>Quality Gate</strong></span></a>
+        <div class="header-right"><span class="local-badge"><span class="status-dot" aria-hidden="true"></span>Local showcase</span><a class="quiet-link" href="#about">How this example works <span aria-hidden="true">↗</span></a></div>
+      </div>
+    </header>
+    <main id="top" class="page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div><p class="eyebrow">MEANING MATTERS. IN EVERY LANGUAGE.</p><h1 id="page-title">Good translations deserve<br>a second look<span class="teal-period">.</span></h1></div>
+        <p class="hero-description">Compare a translation with its source, explore three reviewers’ perspectives, and see what a careful revision changes.</p>
+      </section>
+      <div class="disclosure"><span class="disclosure-icon" aria-hidden="true">i</span><p><strong>Synthetic example · mock scores · no live AI calls</strong><span>Hand-authored text and assessments. All interactions stay in this local page.</span></p><span class="sample-number" aria-hidden="true">EXAMPLE 01</span></div>
+      <section id="workspace" class="workspace" aria-labelledby="workspace-title">
+        <div class="section-bar"><div class="section-title"><span class="section-index" aria-hidden="true">01</span><h2 id="workspace-title">Compare the meaning</h2></div><p class="language-route">English <span aria-hidden="true">→</span> Spanish</p></div>
+        <div class="text-grid">
+          <article class="text-card source-card" aria-labelledby="source-title"><div class="card-heading"><div><span class="language-label">EN</span><h3 id="source-title">Source</h3></div><span class="small-label">Lesson announcement</span></div><p id="source-text" class="sample-text" lang="en">Our next lesson takes place on Friday at 10:00 UTC. We will explore simple ways to organise a study routine. Subtitles will be available in three languages. You can join without creating an account.</p><div class="card-footer"><span class="reference-dot" aria-hidden="true"></span><span>The reference for every review</span></div></article>
+          <article class="text-card target-card" aria-label="Spanish sample"><div class="card-heading target-heading"><div class="sample-tabs" role="tablist" aria-label="Sample version"><button id="translation-tab" type="button" role="tab" aria-selected="true" aria-controls="sample-panel" tabindex="0" data-version="translation">Translation</button><button id="revision-tab" type="button" role="tab" aria-selected="false" aria-controls="sample-panel" tabindex="-1" data-version="revision">Revision</button></div><span class="language-label">ES</span></div><div id="sample-panel" role="tabpanel" aria-labelledby="translation-tab" tabindex="0"><p id="target-text" class="sample-text" lang="es">Nuestra próxima lección será el jueves a las 10:00 UTC. Vamos a explorar formas simples para organizar una rutina de estudio. Los subtítulos estarán disponibles en dos idiomas. Necesitas crear una cuenta para participar.</p></div><div class="card-footer"><span id="version-chip" class="version-chip">Initial sample</span><span id="version-caption">Three facts need a closer look</span></div></article>
+        </div>
+        <div class="action-bar"><p id="action-hint">Start with the first translation, then compare the revision.</p><div class="actions"><button id="reset-button" class="text-button" type="button">Reset example</button><button id="revision-button" class="secondary-button" type="button">Show revised sample</button><button id="check-button" class="primary-button" type="button">Check sample <span aria-hidden="true">↗</span></button></div></div>
+        <p id="live-status" class="sr-only" role="status" aria-live="polite" aria-atomic="true"></p>
+      </section>
+      <section class="review-section" aria-labelledby="review-title"><div class="section-bar"><div class="section-title"><span class="section-index" aria-hidden="true">02</span><h2 id="review-title">Look at the whole picture</h2></div><span class="small-label">Three independent mock reviewers</span></div><div class="review-grid"><article class="score-card" aria-labelledby="score-title"><div class="score-card-top"><h3 id="score-title">Quality overview</h3><span class="mock-tag">MOCK</span></div><div id="score-content"></div></article><article class="findings-card" aria-labelledby="findings-title"><div class="findings-header"><h3 id="findings-title">Review notes</h3><span id="findings-count" class="count-badge">—</span></div><div id="findings-content"></div></article></div><div id="reviewer-content" class="reviewer-content"></div></section>
+      <section id="correction-section" class="correction-section" aria-labelledby="correction-title" hidden><div class="section-bar"><div class="section-title"><span class="section-index" aria-hidden="true">03</span><h2 id="correction-title">What the revision changes</h2></div><span class="small-label">Hand-authored correction notes</span></div><div id="correction-content" class="correction-grid"></div></section>
+      <section id="about" class="about-section" aria-labelledby="about-title"><div><p class="eyebrow">A SMALL, TRANSPARENT EXAMPLE</p><h2 id="about-title">A workflow you can inspect.</h2></div><div class="about-copy"><p id="provenance">The text, revision, findings, and scores are hand-authored for this synthetic example. They are not model outputs or benchmark results.</p><p>For this showcase, each dimension takes the lowest of three mock scores. The overall score is the lowest dimension, and the largest spread shows where reviewers differ most. This is an illustrative policy, not a description of a production system. An incomplete review produces no aggregate score.</p><p>No text entry, uploads, storage, analytics, or external services. Switching versions only changes the selected sample. A score is not a substitute for your own assessment.</p></div></section>
+      <footer class="site-footer"><span>Multilingual Quality Gate</span><span>Made for a closer look.</span><span class="footer-status"><span class="status-dot" aria-hidden="true"></span>Offline by design</span></footer>
+    </main>
+    <noscript><p class="noscript-message">Enable JavaScript to run the local mock review. The source and initial translation remain readable above.</p></noscript>
+  </body>
+</html>

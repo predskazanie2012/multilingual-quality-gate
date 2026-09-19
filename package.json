@@ -1,0 +1,13 @@
+{
+  "name": "multilingual-quality-gate",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A cross-language reliability layer for AI-generated multilingual content — synthetic public showcase",
+  "type": "module",
+  "license": "UNLICENSED",
+  "engines": { "node": ">=22" },
+  "scripts": {
+    "start": "node scripts/serve.mjs",
+    "test": "node --test tests/*.test.mjs"
+  }
+}
